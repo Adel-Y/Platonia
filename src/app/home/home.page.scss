@@ -60,7 +60,21 @@ color: #B9B9B9;
 font-family: Poppins-light300;
 font-size:14px;
 }
+ .sign{
+  margin-top: 7px;
+   
+ }
+  ion-button{
+    --background: #56B570;
+    text-transform: none;
+    font-family: Poppins-light300;
+    font-size: 10px;
+    height: 30px;
 
+    width: 250px;
+    margin: auto;
+    
+  }
 
 
 @font-face { font-family: Playball; 
