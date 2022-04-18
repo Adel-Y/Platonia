@@ -13,8 +13,8 @@ const routes: Routes = [
         loadChildren: () => import('../landing/landing.module').then( m => m.LandingPageModule)
       },
       {
-        path: 'home',
-        loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
+        path: 'my-activity',
+        loadChildren: () => import('../my-activity/my-activity.module').then( m => m.MyActivityPageModule)
       },
       {
         path: 'register',
