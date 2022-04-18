@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'activity',
     loadChildren: () => import('./activity/activity.module').then( m => m.ActivityPageModule)
   },
+  {
+    path: 'my-activity',
+    loadChildren: () => import('./my-activity/my-activity.module').then( m => m.MyActivityPageModule)
+  },
 
 
 ];

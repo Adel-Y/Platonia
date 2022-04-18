@@ -75,6 +75,10 @@ ion-content{
       font-family: Poppins-light300;
       font-size: 15px;
   }
+  .secondarylabel{
+    font-family: Poppins-light300;
+    font-size: 13px;
+}
   ion-item{
       margin-top: -3px;
   }
@@ -93,6 +97,12 @@ ion-content{
       margin-left: 90px;
 
       
+  }
+  .scroll{
+      width: 240px;
+      height: 90px;
+
+      overflow-y: scroll;
   }
 
   @font-face { font-family: Playball; 
