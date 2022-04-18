@@ -17,8 +17,8 @@ const routes: Routes = [
         loadChildren: () => import('../my-activity/my-activity.module').then( m => m.MyActivityPageModule)
       },
       {
-        path: 'register',
-        loadChildren: () => import('../register/register.module').then( m => m.RegisterPageModule)
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
       },
       {
         path: '',
