@@ -1,9 +1,64 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>add_activity</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
+  <div class="green">
+    <ion-fab-button href="/tabs" size="small" color="dark" style="margin-top: -5px;">
+      <ion-icon name="close-circle-outline" size="large"></ion-icon>
+    </ion-fab-button>
+
+  </div>
+
+
+  <h2>Platonia</h2>
+
+  <h5>Create Event</h5>
+<br>
+ <form action="">
+  <ion-item lines="none">
+    <ion-icon name="person-outline" style="font-size:27px;"></ion-icon>
+    <ion-label class="primarylabel">Planner:</ion-label>
+    <ion-label class="secondrylabel">John Doe</ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-icon name="body-outline" style="font-size:27px;"></ion-icon>
+    <ion-label class="primarylabel">Topic:</ion-label>
+    <input type="text" class="short-input" value="">
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-icon name="location-outline" style="font-size:27px;"></ion-icon>
+    <ion-label class="primarylabel">Place:</ion-label>
+    <input type="text" class="short-input" value="">
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-icon name="calendar-outline" style="font-size:27px;"></ion-icon>
+    <ion-label class="primarylabel">Date:</ion-label>
+    <input type="date" class="short-input" value="">
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-icon name="time-outline" style="font-size:27px;"></ion-icon>
+    <ion-label class="primarylabel">Time:</ion-label>
+    <input type="time" class="short-input" value="">
+  </ion-item>
+
+  <div class="floater" style="width: 200px;">
+    <ion-icon name="file-tray-outline" style="font-size:27px;"></ion-icon>
+    <ion-label class="primarylabel">Capacity:</ion-label>
+    <input type="number" class="small-input" value="">
+  </div>
+
+    <div class="pink"></div>
+
+  <div class="divvy">
+    <ion-label class="primarylabel">Description:</ion-label> <br>
+
+      <textarea name="" id="" cols="30" rows="10" class="input-r"></textarea>
+    </div>
+
+    <div class="grey"></div>
+    <ion-button href="tabs/my-activity">Save</ion-button>
+  </form>
+    <div class="blue"></div>
 </ion-content>

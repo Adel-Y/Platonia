@@ -5,7 +5,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
       },
       {
+        path: 'home',
+        loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/landing',
         pathMatch: 'full'
@@ -31,6 +35,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/landing',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
   }
 ];
 

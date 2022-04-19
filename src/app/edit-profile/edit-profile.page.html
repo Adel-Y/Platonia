@@ -1,7 +1,11 @@
 <ion-content>
 
 
-  <div class="grey"></div>
+  <div class="grey">
+    <ion-fab-button href="/tabs" size="small" color="dark" style="margin-top: -5px; margin-left: -6px;" >
+      <ion-icon name="close-circle-outline" size="large"></ion-icon>
+    </ion-fab-button>
+  </div>
 
 
   <h2>Platonia</h2>
@@ -15,7 +19,7 @@
   </div>
 
 
-  <form action="POST">
+  <form action="">
   <ion-item lines="none">
     <ion-label class="primarylabel">Name:</ion-label>
     <input type="text" class="short-input" value="John Doe">
@@ -42,19 +46,17 @@
 
 
   <ion-label class="primarylabel" style="margin-left: 15px;">Interests:</ion-label><br>
-  <!-- <div > -->
+
     <textarea name="" id="" cols="30" rows="10" class="input-r"></textarea>
-    <!-- <ion-label>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quae esse quo architecto tenetur alias
-      minima. Modi, voluptas deserunt, quae, quisquam provident neque asperiores unde veritatis maxime repellat ipsum
-      sapiente!</ion-label> -->
-  <!-- </div> -->
-  </form>
+
+  
 
 
 
 
   <div class="pink"></div>
   <ion-button href="tabs/profile">Save</ion-button>
+</form>
   <div class="green"></div>
 
 
