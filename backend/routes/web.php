@@ -26,10 +26,17 @@ Route::get('/test-ui', function (){
     return view('test-ui');
 });
 
+
+
 Route::post('/register', [AuthenticationController::class, 'register']);
 
-
 Route::post('/login', [AuthenticationController::class, 'login']);
+
+Route::post('/newEvent',[\App\Http\Controllers\EventController::class,'createEvent']);
+
+Route::post('/joinEvent',[\App\Http\Controllers\EventController::class,'joinEvent']);
+
+Route::post('/editProfile',[\App\Http\Controllers\ProfileController::class,'editProfile']);
 
 Route::get('user/{id}', [AuthenticationController::class, 'getUser']);
 
@@ -39,6 +46,4 @@ Route::get('/eventView/{id}' ,[\App\Http\Controllers\EventController::class,'get
 
 Route::get('/userView/{user_id}' ,[\App\Http\Controllers\EventController::class,'getUserEvent']);
 
-Route::post('/newEvent',[\App\Http\Controllers\EventController::class,'createEvent']);
 
-Route::post('/joinEvent',[\App\Http\Controllers\EventController::class,'joinEvent']);
