@@ -32,3 +32,13 @@ Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
 
 Route::get('user/{id}', [AuthenticationController::class, 'getUser']);
+
+Route::get('/landing' ,[\App\Http\Controllers\EventController::class,'showFeed']);
+
+Route::get('/eventView/{id}' ,[\App\Http\Controllers\EventController::class,'getEvent']);
+
+Route::get('/userView/{user_id}' ,[\App\Http\Controllers\EventController::class,'getUserEvent']);
+
+Route::post('/newEvent',[\App\Http\Controllers\EventController::class,'createEvent']);
+
+Route::post('/joinEvent',[\App\Http\Controllers\EventController::class,'joinEvent']);

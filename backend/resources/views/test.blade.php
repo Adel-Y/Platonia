@@ -3,14 +3,16 @@
 
 </head>
 <body>
-<form action="/register" method="POST">
+<form action="/joinEvent" method="POST">
     @csrf
-    <input type="text" name="email" placeholder="email">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="password" placeholder="password">
-    <input type="text" name="password_confirmation"  placeholder="password_confirmation">
-    <input type="text" name="age" placeholder="age">
-    <input type="text" name="gender" placeholder="gender">
+    <input type="number" name="event_id" placeholder="name">
+    <input type="number" name="user_id" placeholder="topic">
+{{--    <input type="text" name="event_place" placeholder="place">--}}
+{{--    <input type="date" name="event_date"  placeholder="date">--}}
+{{--    <input type="time" name="event_time" placeholder="time">--}}
+{{--    <input type="number" name="event_capacity" placeholder="cap">--}}
+
+{{--    <textarea name="event_description"></textarea>--}}
 {{--    <input type="text">--}}
 {{--    <input type="text">--}}
 {{--    --}}

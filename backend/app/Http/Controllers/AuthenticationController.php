@@ -17,7 +17,7 @@ class AuthenticationController extends Controller
             $this->validate($request, [
                 'email' => 'required|email|unique:users',
                 'name' => 'required',
-                'age' => 'required',
+                'age' => 'required|integer',
                 'password' => ['required', 'confirmed', Password::defaults()],
                 'gender'=>'required'
             ]);
