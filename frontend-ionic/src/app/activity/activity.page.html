@@ -17,47 +17,44 @@
   <ion-item lines="none">
     <ion-icon name="person-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="labels, primarylabel">Planner:</ion-label>
-    <ion-label class="primarylabel">John Doe</ion-label>
+    <ion-label class="primarylabel">{{event.planner_name}}</ion-label>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="body-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="labels, primarylabel">Topic:</ion-label>
-    <ion-label class="primarylabel">Fishing</ion-label>
+    <ion-label class="primarylabel">{{event.event_topic}}</ion-label>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="location-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="labels, primarylabel">Place:</ion-label>
-    <ion-label class="primarylabel">SomeWhere</ion-label>
+    <ion-label class="primarylabel">{{event.event_place}}</ion-label>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="calendar-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="labels, primarylabel">Date:</ion-label>
-    <ion-label class="primarylabel">16/3/2022</ion-label>
+    <ion-label class="primarylabel">{{event.event_date}}</ion-label>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="time-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="labels, primarylabel">Time:</ion-label>
-    <ion-label class="primarylabel">13:00</ion-label>
+    <ion-label class="primarylabel">{{event.event_time}}</ion-label>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="file-tray-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="labels, primarylabel">Capacity:</ion-label>
-    <ion-label class="primarylabel">3</ion-label>
+    <ion-label class="primarylabel">{{event.event_capacity}}</ion-label>
   </ion-item>
 
   <div class="div-des">
 
     <ion-label class="labels, primarylabel">Description:</ion-label> <br>
     <div class="scroll">
-      <ion-label class="secondarylabel">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet quia sint,
-        corrupti suscipit, dicta in maxime temporibus veniam nihil veritatis, ipsam eius tempora vel maiores velit atque
-        repudiandae molestiae pariatur voluptatum. Reprehenderit quibusdam excepturi accusantium cupiditate velit atque
-        nesciunt tenetur incidunt iure sed veniam voluptates, corrupti cumque libero sunt quidem!</ion-label>
+      <ion-label class="secondarylabel">{{event.event_description}}</ion-label>
     </div>
     <br>
     <center>

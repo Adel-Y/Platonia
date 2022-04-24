@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ShowFeedService} from '../apis/show-feed.service';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.page.html',
@@ -8,7 +9,7 @@ import {ShowFeedService} from '../apis/show-feed.service';
 export class LandingPage implements OnInit {
 
   events:any=[];
-  
+
   constructor(private service: ShowFeedService) { }
 
   ngOnInit() {
