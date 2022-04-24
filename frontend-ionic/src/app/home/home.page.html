@@ -12,23 +12,24 @@
 
 <p>Login to your account</p>
 
-<form action="/login" method="POST">
+<form  #user="ngForm" (ngSubmit) = "onClick(user)">
 
 <ion-item lines="none">
   <ion-label position="stacked" class="label">@ Email</ion-label>
-  <ion-input class="input" type="email" name="email"></ion-input>
+  <ion-input ngModel class="input" type="email" name="email"></ion-input>
 </ion-item>
 
 <ion-item lines="none">
   <ion-label position="stacked" class="label">@ Password</ion-label>
-  <ion-input class="input" type="password" name="password"></ion-input>
+  <ion-input ngModel class="input" type="password" name="password"></ion-input>
 </ion-item>
 
 
 <div class="sign">
-<ion-button expand="block" href="tabs">Sign In</ion-button>
+<ion-button expand="block" type="submit" >Sign In</ion-button>
 </div>
 </form>
+
 <p class="par">Don't Have an account? <a href="register">Register Here</a></p>
 
 
