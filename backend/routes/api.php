@@ -19,9 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('/register', [AuthenticationController::class, 'register']);
+Route::post('/register', [\App\Http\Controllers\AuthenticationController::class, 'register']);
 
-Route::post('/login', [AuthenticationController::class, 'login']);
+Route::post('/login', [\App\Http\Controllers\AuthenticationController::class, 'login']);
 
 Route::post('/newEvent',[\App\Http\Controllers\EventController::class,'createEvent']);
 
@@ -29,7 +29,7 @@ Route::post('/joinEvent',[\App\Http\Controllers\EventController::class,'joinEven
 
 Route::post('/editProfile',[\App\Http\Controllers\ProfileController::class,'editProfile']);
 
-Route::get('user/{id}', [AuthenticationController::class, 'getUser']);
+Route::get('user/{id}', [\App\Http\Controllers\AuthenticationController::class, 'getUser']);
 
 Route::get('/landing' ,[\App\Http\Controllers\EventController::class,'showFeed']);
 

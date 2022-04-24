@@ -22,7 +22,9 @@ class AuthenticationController extends Controller
                 'gender'=>'required'
             ]);
         }catch (ValidationException $exception) {
-            return $exception->errors();
+            $response = collect(['accepted' => false, $exception->errors()]);
+//            return json_encode("false");
+            return  $response;
         }
         $user=User::create([
             'email'=>$request->email,
@@ -32,29 +34,35 @@ class AuthenticationController extends Controller
             'gender'=>$request->gender,
 
         ]);
-
-        return "success";
+        $response = collect(['accepted' => true]);
+//        return json_encode("true");
+        return $response;
     }
 
     public function login(Request $request){
-        //VALIDATE
+
         try{
             $this->validate($request, [
                 'email' => 'required|email',
                 'password' => 'required',
             ]);
         }catch (ValidationException $exception) {
-            return $exception->errors();
+            $response = collect(['authenticated' => false, $exception->errors()]);
+            return $response;
         }
 
         $user = User::where('email', $request->email)->first();
 
 
         if (!$user || !Hash::check($request->password, $user->password)){
-            return "unauthorized";
+            $response = collect(['authenticated' => false]);
+            return $response;
         }
 
-        return $user;
+
+
+        $response = collect(['authenticated' => true,$user]);
+        return $response;
     }
 
     public function getUser($id){
