@@ -12,4 +12,12 @@ export class ShowEventService {
   getEvent(id){
     return this.http.get(this.url+'eventView/' + id);
   }
+
+  getUserEvent(id){
+    return this.http.get(this.url+'userView/' + id);
+  }
+
+  getFeed(){
+    return this.http.get(this.url+'landing');
+  }
 }

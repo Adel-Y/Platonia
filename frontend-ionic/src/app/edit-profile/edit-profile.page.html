@@ -2,7 +2,7 @@
 
 
   <div class="grey">
-    <ion-fab-button href="/tabs" size="small" color="dark" style="margin-top: -5px; margin-left: -6px;" >
+    <ion-fab-button (click)="go()" size="small" color="dark" style="margin-top: -5px; margin-left: -6px;" >
       <ion-icon name="close-circle-outline" size="large"></ion-icon>
     </ion-fab-button>
   </div>
@@ -19,35 +19,36 @@
   </div>
 
 
-  <form action="">
+  <form #user="ngForm" (ngSubmit) = "update(user)">
+    <input type="hidden" name="id" value="{{user.id}}"> 
   <ion-item lines="none">
     <ion-label class="primarylabel">Name:</ion-label>
-    <input type="text" class="short-input" value="John Doe">
+    <ion-input ngModel type="text" class="short-input" value='{{user.name}}' name="name"></ion-input>
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Email:</ion-label>
-    <input type="text" class="short-input" value="">
+    <ion-input ngModel  type="text" class="short-input" value='{{user.email}}' name="email"></ion-input>
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Age:</ion-label>
-    <input type="text" class="short-input" value="">
+    <ion-input ngModel  type="number" class="short-input" value='{{user.age}}' name="age"> </ion-input>
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Gender:</ion-label>
-    <input type="text" class="short-input" value="">
+    <ion-input ngModel  type="text" class="short-input" value='{{user.gender}}' name="gender"></ion-input>
 
   </ion-item>
 
 
   <ion-label class="primarylabel" style="margin-left: 15px;">Interests:</ion-label><br>
 
-    <textarea name="" id="" cols="30" rows="10" class="input-r"></textarea>
+    <ion-textarea ngModel id="" cols="30" rows="5" class="input-r" name="interests">{{user.interests}}</ion-textarea>
 
   
 
@@ -55,7 +56,7 @@
 
 
   <div class="pink"></div>
-  <ion-button href="tabs/profile">Save</ion-button>
+  <ion-button type="submit">Save</ion-button>
 </form>
   <div class="green"></div>
 

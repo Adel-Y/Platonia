@@ -88,11 +88,13 @@ ion-item{
 .input-r{
     margin-left: 25px;
     width: 220px;
-    height: 90px;
+    height: 120px;
     font-family:Poppins-light300 ;
     border-radius: 10px;
     font-size: 12px;
     resize: none;
+    background-color: #e6e6e6;
+    --padding-start:10px;
     
 }
 
@@ -106,10 +108,13 @@ ion-button{
 }
 
 .short-input{
-    width: 160px;
+    width: 80px;
+    height:25px;
+    --padding-start: 8px;
     font-family:Poppins-light300 ;
     border-radius: 10px;
     font-size: 12px;
+    background-color: #e6e6e6;
 }
   @font-face { font-family: Playball; 
     src: url('../../assets/fonts/Playball-Regular.ttf'); }

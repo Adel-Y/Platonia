@@ -27,8 +27,8 @@ export class HomePage {
       }
       else if(response['authenticated']==true)
       { 
-        console.log(response[0].id)
-        localStorage.setItem('user_id',response[0].id);
+        console.log(response['user'].id)
+        localStorage.setItem('user_id',response['user'].id);
 
           this.router.navigate(['/tabs']);
       }

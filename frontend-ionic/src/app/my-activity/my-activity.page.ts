@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ShowEventService} from '../apis/show-event.service'
 
 @Component({
   selector: 'app-my-activity',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyActivityPage implements OnInit {
 
-  constructor() { }
+  constructor(private service: ShowEventService) { }
+events:any=[];
 
   ngOnInit() {
+    this.service.getUserEvent(localStorage.getItem('user_id')).subscribe(response => {
+      this.events=response;
+      console.log('retrieved');
+    })
   }
 
 }

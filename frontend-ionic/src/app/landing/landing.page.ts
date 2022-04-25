@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ShowFeedService} from '../apis/show-feed.service';
+import {ShowEventService} from '../apis/show-event.service';
 
 @Component({
   selector: 'app-landing',
@@ -10,7 +10,7 @@ export class LandingPage implements OnInit {
 
   events:any=[];
 
-  constructor(private service: ShowFeedService) { }
+  constructor(private service: ShowEventService) { }
 
   ngOnInit() {
     this.service.getFeed().subscribe(response =>{
