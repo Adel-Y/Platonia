@@ -23,7 +23,7 @@ class AuthenticationController extends Controller
             ]);
         }catch (ValidationException $exception) {
             $response = collect(['accepted' => false, $exception->errors()]);
-//            return json_encode("false");
+
             return  $response;
         }
         $user=User::create([
@@ -35,7 +35,7 @@ class AuthenticationController extends Controller
 
         ]);
         $response = collect(['accepted' => true]);
-//        return json_encode("true");
+
         return $response;
     }
 
@@ -61,7 +61,7 @@ class AuthenticationController extends Controller
 
 
 
-        $response = collect(['authenticated' => true,$user]);
+        $response = collect(['authenticated' => true,'user'=>$user]);
         return $response;
     }
 
