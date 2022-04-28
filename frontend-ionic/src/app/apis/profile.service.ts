@@ -14,6 +14,14 @@ export class ProfileService {
   }
 
   update(user:any){
-    return this.http.post(this.url+'editProfile',{'id':localStorage.getItem('user_id'), 'name':user.name,'email':user.email,'age':user.age,'gender':user.gender,'interests':user.interests});
+    return this.http.post(this.url+'editProfile',
+    {
+    'id':localStorage.getItem('user_id'),
+    'name':user.name,
+    'email':user.email,
+    'age':user.age,
+    'gender':user.gender,
+    'interests':user.interests
+  });
   }
 }

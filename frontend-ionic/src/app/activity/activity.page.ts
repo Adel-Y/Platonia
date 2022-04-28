@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import {ShowEventService} from '../apis/show-event.service'
 
 @Component({
@@ -8,14 +8,28 @@ import {ShowEventService} from '../apis/show-event.service'
   styleUrls: ['./activity.page.scss'],
 })
 export class ActivityPage implements OnInit {
-  event:any=[];
-  constructor(private service: ShowEventService, private route: ActivatedRoute) { }
+  data:any=[];
+  cap:any;
+  constructor(private service: ShowEventService, private router:Router) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.queryParamMap.get('id');
+    let id = localStorage.getItem('event_id');
+
     this.service.getEvent(id).subscribe( response => {
-      this.event=response;
+      this.data=response['event'];
+      this.cap=response['capacity'];
+      console.log(this.cap);
     });
   }
 
+  go(){
+    this.router.navigate(['tabs']);
+  }
+
+  join(){
+    this.service.joinEvent(localStorage.getItem('user_id'),localStorage.getItem('event_id'))
+    .subscribe(response =>{
+      console.log(response);
+    })
+  }
 }

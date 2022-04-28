@@ -20,12 +20,12 @@
     <ion-card-content>
       {{ event.event_description }}
     </ion-card-content>
-    <ion-button class="card-button" href="activity?id={{event.id}}" >View</ion-button>
+    <ion-button class="card-button" (click)="go(event.id)" >View</ion-button>
   </ion-card>
 
   <ion-fab vertical="bottom" horizontal="center"  slot="fixed">
   
-    <ion-fab-button class="fabular" href="add-activity">
+    <ion-fab-button class="fabular" (click)='add()'>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   

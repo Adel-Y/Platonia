@@ -13,10 +13,22 @@ export class LoginService {
   private url = 'http://127.0.0.1:8001/api/'
 
   login(user: any) {
-    return this.http.post(this.url + 'login', {'email': user.email, 'password': user.password });
+    return this.http.post(this.url + 'login', 
+    {
+    'email': user.email,
+    'password': user.password 
+  });
   }
 
   register(user:any){
-    return this.http.post(this.url+'register',{'email':user.email,'password':user.password,'password_confirmation':user.password_confirmation,'name':user.name,'age':user.age,'gender':user.gender})
+    return this.http.post(this.url+'register',
+    {
+    'email':user.email,
+    'password':user.password,
+    'password_confirmation':user.password_confirmation,
+    'name':user.name,
+    'age':user.age,
+    'gender':user.gender
+  });
   }
 }

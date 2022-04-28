@@ -32,6 +32,8 @@ export class RegisterPage implements OnInit {
     });
 
   }
-
+  go(){
+    this.router.navigate(['home']);
+  }
 
 }

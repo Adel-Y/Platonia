@@ -80,11 +80,13 @@ margin-top: -60px;
 .input-r{
     margin-left: 25px;
     width: 220px;
-    height: 90px;
+    height: 110px;
     font-family:Poppins-light300 ;
     border-radius: 10px;
     font-size: 12px;
+    --padding-start: 20px;
     resize: none;
+    background-color: #e6e6e6;
     
 }
 
@@ -98,19 +100,23 @@ ion-button{
 }
 
 .short-input{
-    width: 160px;
-    font-family:Poppins-light300 ;
-    border-radius: 10px;
-    font-size: 12px;
+  width: 80px;
+  height:25px;
+  --padding-start: 8px;
+  font-family:Poppins-light300 ;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #e6e6e6;
 }
 
 .small-input{
     width: 60px;
     font-family:Poppins-light300 ;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 14px;
+    --padding-start: 8px;
     margin-left: 5px;
-
+    background-color: #e6e6e6;
 }
 
 .floater{

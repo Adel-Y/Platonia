@@ -16,6 +16,8 @@ user:any=[];
       this.user=response;
       console.log(response);
     });
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
   }
   go(){
     this.router.navigate(['edit-profile']);

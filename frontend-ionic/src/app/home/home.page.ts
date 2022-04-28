@@ -29,6 +29,8 @@ export class HomePage {
       { 
         console.log(response['user'].id)
         localStorage.setItem('user_id',response['user'].id);
+        
+        localStorage.setItem('name',response['user'].name);
 
           this.router.navigate(['/tabs']);
       }
@@ -36,5 +38,7 @@ export class HomePage {
 
     });
   }
-
+go(){
+  this.router.navigate(['register']);
+}
 }
