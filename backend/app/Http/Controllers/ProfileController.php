@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
@@ -25,6 +26,7 @@ class ProfileController extends Controller
             return $exception->errors();
         }
 
+        $name=User::where('id', $request->id)->pluck('name');
 
       $user=  User::where('id', $request->id)->update([
             'name'=>$request->name,
@@ -34,6 +36,12 @@ class ProfileController extends Controller
             'interests'=>$request->interests
 
         ]);
+
+      Event::where('planner_name',$name)->update([
+          'name'=>$request->name
+      ]);
+
+
         $response = collect(['updated' => true,'user'=>$user]);
         return $response;
 //        return json_decode('Profile Updated!');

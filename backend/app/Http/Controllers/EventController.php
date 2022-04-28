@@ -16,7 +16,7 @@ class EventController extends Controller
         $event= Event::all();
 
         if (!$event){
-            return "no events in the current time";
+            return ['message'=> 'no events in the current time'];
         }
 
         return $event;
@@ -44,11 +44,27 @@ class EventController extends Controller
             'event_time'=>$request->event_time,
             'event_capacity'=>$request->event_capacity,
             'event_description'=>$request->event_description
+        ])->get()->last();
+
+
+        $event_id=$event->id;
+        UserEvent::create([
+            'user_id'=>$request->user_id,
+            'event_id'=> $event_id
+
         ]);
+
+        return ['message'=> 'successful creation!'];
+
     }
 
     public function getEvent($id){
-        return Event::find($id);
+        $event=Event::find($id);
+        $cap=   $event->event_capacity;
+        $user_event= UserEvent::where('event_id',$id);
+        $members = $user_event->count();
+        $rem=$cap-$members;
+        return ['event'=>$event, 'capacity'=>$rem];
     }
 
     public function getUserEvent($user_id){
@@ -67,13 +83,14 @@ class EventController extends Controller
     $user_event= UserEvent::where('event_id',$request->event_id);
     $members = $user_event->count();
 
-    $check = UserEvent::where('user_id',$request->user_id)->where('event_id',$request->product_id)->get();
+    $check = UserEvent::where('user_id',$request->user_id)->where('event_id',$request->event_id)->get();
 
     if($members >= $cap){
-        return "The event capacity is full!";
+        return ['message'=> 'The event capacity is full!'];
     }else{
         if ($check->count() > 0){
-            return "You have already joined the event";
+
+            return ['message'=> 'You have already joined the event'];
         }
     }
 
@@ -82,7 +99,7 @@ class EventController extends Controller
         'user_id'=>$request->user_id
     ]);
 
-    return "You have joined successfully";
+    return ['message'=> 'successful join!'];;
 
     }
 }
