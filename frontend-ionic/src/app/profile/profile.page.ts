@@ -12,13 +12,20 @@ user:any=[];
   constructor(private service : ProfileService, private router:Router) { }
 
   ngOnInit() {
-    this.service.getUser(localStorage.getItem('user_id')).subscribe(response=>{
-      this.user=response;
-      console.log(response);
-    });
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.onSameUrlNavigation = 'reload';
+    // this.service.getUser(localStorage.getItem('user_id')).subscribe(response=>{
+    //   this.user=response;
+    //   console.log(response);
+    // });
   }
+
+  ionViewDidEnter(){
+    this.service.getUser(localStorage.getItem('user_id')).subscribe(response =>{
+      this.user=response;
+      console.log(this.user);
+      
+    });
+  }
+
   go(){
     this.router.navigate(['edit-profile']);
   }

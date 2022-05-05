@@ -7,15 +7,21 @@ import { ProfileService } from '../apis/profile.service';
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
   styleUrls: ['./edit-profile.page.scss'],
+  
 })
+
 export class EditProfilePage implements OnInit {
   user:any=[];
   constructor(private service: ProfileService,private router:Router) { }
 
+  
+
   ngOnInit() {
     this.service.getUser(localStorage.getItem('user_id')).subscribe(response=>{
       this.user=response;
+      
       console.log(response);
+      
     });
   }
 

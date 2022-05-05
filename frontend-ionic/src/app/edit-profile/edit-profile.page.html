@@ -23,25 +23,25 @@
     <input type="hidden" name="id" value="{{user.id}}"> 
   <ion-item lines="none">
     <ion-label class="primarylabel">Name:</ion-label>
-    <ion-input ngModel type="text" class="short-input" value='{{user.name}}' name="name"></ion-input>
+    <input ngModel type="text" class="short-input" value='{{user.name}}' name="name">
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Email:</ion-label>
-    <ion-input ngModel  type="text" class="short-input" value='{{user.email}}' name="email"></ion-input>
+    <input ngModel  type="text" class="short-input" value='{{user.email}}' name="email">
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Age:</ion-label>
-    <ion-input ngModel  type="number" class="short-input" value='{{user.age}}' name="age"> </ion-input>
+    <input ngModel  type="number" class="small-input" value='{{user.age}}' name="age"> 
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Gender:</ion-label>
-    <ion-input ngModel  type="text" class="short-input" value='{{user.gender}}' name="gender"></ion-input>
+    <input ngModel  type="text" class="short-input" value='{{user.gender}}' name="gender">
 
   </ion-item>
 
@@ -56,7 +56,9 @@
 
 
   <div class="pink"></div>
-  <ion-button type="submit">Save</ion-button>
+<div class="center">
+ <ion-button type="submit">Save</ion-button>
+</div>
 </form>
   <div class="green"></div>
 

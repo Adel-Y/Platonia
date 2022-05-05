@@ -8,7 +8,7 @@ export class ShowEventService {
 
   constructor(private http: HttpClient, private service: ProfileService) { }
   user:any=[];
-  private url ='http://127.0.0.1:8001/api/'
+  private url ='http://127.0.0.1:8000/api/'
 
   getEvent(id){
     return this.http.get(this.url+'eventView/' + id);

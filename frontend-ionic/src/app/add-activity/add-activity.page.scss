@@ -51,6 +51,7 @@ ion-content{
     font-family: Playball;
     font-size: 30px;
     margin-left: 5px;
+    text-align:justify;
   }
 
   h5{
@@ -66,6 +67,10 @@ ion-content{
     margin-right: 3px;
 }
 
+.deslabel{
+margin-left: 16px;
+}
+
 .secondarylabel{
     font-family: Poppins-light300;
     font-size: 15px;
@@ -79,8 +84,8 @@ margin-top: -60px;
 
 .input-r{
     margin-left: 25px;
-    width: 220px;
-    height: 110px;
+    width: 235px;
+    height: 100px;
     font-family:Poppins-light300 ;
     border-radius: 10px;
     font-size: 12px;
@@ -100,13 +105,17 @@ ion-button{
 }
 
 .short-input{
-  width: 80px;
+  width: 165px;
   height:25px;
-  --padding-start: 8px;
+  padding-inline-start: 8px;
   font-family:Poppins-light300 ;
   border-radius: 10px;
+  border:#e6e6e6 ;
   font-size: 12px;
   background-color: #e6e6e6;
+  
+
+  
 }
 
 .small-input{
@@ -114,9 +123,10 @@ ion-button{
     font-family:Poppins-light300 ;
     border-radius: 10px;
     font-size: 14px;
-    --padding-start: 8px;
-    margin-left: 5px;
+    padding-inline-start: 8px;
+    margin-left: 20px;
     background-color: #e6e6e6;
+    border:#e6e6e6 ;
 }
 
 .floater{
@@ -124,6 +134,14 @@ ion-button{
     display: flex;
     padding-left: 16px;
     
+}
+
+.center{
+  display: flex;
+  align-content: center;
+  float: left;
+  // margin-left: 40px;
+  // margin-top: -6px;
 }
   @font-face { font-family: Playball; 
     src: url('../../assets/fonts/Playball-Regular.ttf'); }

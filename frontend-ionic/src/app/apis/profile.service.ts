@@ -7,7 +7,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  private url ='http://127.0.0.1:8001/api/';
+  private url ='http://127.0.0.1:8000/api/';
 
   getUser(id){
     return this.http.get(this.url+'user/' + id);

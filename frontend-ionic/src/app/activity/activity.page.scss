@@ -33,7 +33,7 @@ ion-content{
     border-radius: 80px;
     padding: 80px;
     margin-left: -60px;
-    margin-top: 20px;
+     margin-top: -10px;
     float: left;
 
   }
@@ -103,6 +103,17 @@ ion-content{
       height: 90px;
 
       overflow-y: scroll;
+  }
+  .center{
+    display: flex;
+    align-content: center;
+
+  }
+  .centeroid{
+margin-right:110px ;
+margin-top: 4px;
+float: right;
+
   }
 
   @font-face { font-family: Playball; 

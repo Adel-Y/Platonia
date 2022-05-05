@@ -57,17 +57,19 @@
       <ion-label class="secondarylabel">{{data.event_description}}</ion-label>
     </div>
     <br>
-    <center>
+  <div class="center">
       <ion-label class="labels, primarylabel">Places Remaining:</ion-label>
-      <ion-label class="primarylabel"> {{cap}}</ion-label>
-    </center>
+      <ion-label class="primarylabel" style="margin-left: 8px;">{{cap}}</ion-label>
+    </div>
   </div>
 
 
   <div class="grey"></div>
-
+  <div class="centeroid">
+    <ion-button (click)="join()">Join</ion-button>
+  </div>
   <div class="blue"></div>
-  <ion-button (click)="join()">Join</ion-button>
+
 
 
 

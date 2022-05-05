@@ -11,6 +11,7 @@ export class LandingPage implements OnInit {
 
   events:any=[];
 
+
   constructor(private service: ShowEventService ,private router:Router) { 
 
   }
@@ -19,15 +20,24 @@ export class LandingPage implements OnInit {
 
   ngOnInit() {
     
+  //    this.service.getFeed().subscribe(response =>{
+  //     Globals.events===response;
+  //     console.log(Globals.events);
+  //     this.events=Globals.events
+      
+  //    });
+
+  }
+
+  ionViewDidEnter(){
     this.service.getFeed().subscribe(response =>{
       this.events=response;
       console.log(this.events);
       
     });
-
-
-
   }
+
+
 
   go(id){
     localStorage.setItem('event_id',id);
@@ -35,7 +45,8 @@ export class LandingPage implements OnInit {
   }
 
   add(){
-    this.router.navigate(['add-activity']);
+    this.router.navigate(['add-activity'], {skipLocationChange: false});
+    // this.router.dispose()
     
   }
 
