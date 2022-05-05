@@ -23,10 +23,10 @@ class ProfileController extends Controller
                 'gender'=>'required'
             ]);
         }catch (ValidationException $exception) {
-            return $exception->errors();
+            return ['updated'=>false ,$exception->errors()];
         }
 
-        $name=User::where('id', $request->id)->pluck('name');
+         $name=User::where('id', $request->id)->pluck('name')->first();
 
       $user=  User::where('id', $request->id)->update([
             'name'=>$request->name,
@@ -38,7 +38,7 @@ class ProfileController extends Controller
         ]);
 
       Event::where('planner_name',$name)->update([
-          'name'=>$request->name
+          'planner_name'=>$request->name
       ]);
 
 

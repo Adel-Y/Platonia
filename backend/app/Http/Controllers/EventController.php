@@ -34,7 +34,7 @@ class EventController extends Controller
                 'event_description'=>'required'
             ]);
         }catch (ValidationException $exception) {
-            return $exception->errors();
+            return['state'=>false, $exception->errors()];
         }
         $event=Event::create([
             'planner_name'=>$request->planner_name,
@@ -54,7 +54,7 @@ class EventController extends Controller
 
         ]);
 
-        return ['message'=> 'successful creation!'];
+        return ['state'=>true,'message'=> 'successful creation!'];
 
     }
 
@@ -86,11 +86,11 @@ class EventController extends Controller
     $check = UserEvent::where('user_id',$request->user_id)->where('event_id',$request->event_id)->get();
 
     if($members >= $cap){
-        return ['message'=> 'The event capacity is full!'];
+        return ['state'=>false,'message'=> 'The event capacity is full!'];
     }else{
         if ($check->count() > 0){
 
-            return ['message'=> 'You have already joined the event'];
+            return ['state'=>false,'message'=> 'You have already joined the event'];
         }
     }
 
@@ -99,7 +99,7 @@ class EventController extends Controller
         'user_id'=>$request->user_id
     ]);
 
-    return ['message'=> 'successful join!'];;
+    return ['state'=>true,'message'=> 'successful join!'];
 
     }
 }
