@@ -22,31 +22,31 @@
   <ion-item lines="none">
     <ion-icon name="body-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="primarylabel">Topic:</ion-label>
-    <input ngModel type="text" class="short-input" name="event_topic">
+    <input ngModel type="text" class="short-input" name="event_topic" required >
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="location-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="primarylabel">Place:</ion-label>
-    <input ngModel type="text" class="short-input" name="event_place">
+    <input ngModel type="text" class="short-input" name="event_place" required>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="calendar-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="primarylabel">Date:</ion-label>
-    <input ngModel type="date" class="short-input" name="event_date">
+    <input ngModel type="date" class="short-input" name="event_date" required>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon name="time-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="primarylabel">Time:</ion-label>
-    <input ngModel type="time" class="short-input" name="event_time">
+    <input ngModel type="time" class="short-input" name="event_time" required>
   </ion-item>
 
   <div class="floater" style="width: 200px;">
     <ion-icon name="file-tray-outline" style="font-size:27px;"></ion-icon>
     <ion-label class="primarylabel">Capacity:</ion-label>
-    <input ngModel type="number" class="small-input" name="event_capacity">
+    <input ngModel type="number" class="small-input" name="event_capacity" required>
   </div>
 
     <div class="pink"></div>
@@ -54,7 +54,7 @@
   <div class="divvy">
     <ion-label class="deslabel">Description:</ion-label> <br>
 
-      <ion-textarea ngModel name="event_description" id="" cols="30" rows="4" class="input-r"></ion-textarea>
+      <ion-textarea ngModel name="event_description" id="" cols="30" rows="4" class="input-r" required></ion-textarea>
     </div>
 
     <div class="grey"></div>

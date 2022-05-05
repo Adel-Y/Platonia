@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {LoginService} from '../apis/login.service';
 import {Router} from '@angular/router';
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -9,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private service:LoginService, private router:Router) { }
+  constructor(private service:LoginService, private router:Router, private toaster:ToastController) { }
 
   ngOnInit() {
   }
@@ -21,12 +22,34 @@ export class RegisterPage implements OnInit {
       console.log(response['accepted']);
 
 
-      if(response['accepted']==true){
+      if(response['accepted']){
+
+        this.toaster.create({
+          header: 'Success',
+          message: 'your account was created',
+          position: 'top',
+          cssClass: 'my-custom-class',
+          color:'success',
+          duration:2000
+        }).then((obj) => {
+          obj.present();
+        });
+
         this.router.navigate(['/home']);
       }
       
-      else if(response['accepted']==false){
+      else if(!response['accepted']){
         console.log('you have an error');
+        this.toaster.create({
+          header: 'Error, Failed Register',
+          message: 'invalid input',
+          position: 'top',
+          cssClass: 'my-custom-class',
+          color:'warning',
+          duration:2000
+        }).then((obj) => {
+          obj.present();
+        });
       }
 
     });

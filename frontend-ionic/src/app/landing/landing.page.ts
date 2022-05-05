@@ -20,12 +20,7 @@ export class LandingPage implements OnInit {
 
   ngOnInit() {
     
-  //    this.service.getFeed().subscribe(response =>{
-  //     Globals.events===response;
-  //     console.log(Globals.events);
-  //     this.events=Globals.events
-      
-  //    });
+
 
   }
 
@@ -46,7 +41,7 @@ export class LandingPage implements OnInit {
 
   add(){
     this.router.navigate(['add-activity'], {skipLocationChange: false});
-    // this.router.dispose()
+
     
   }
 

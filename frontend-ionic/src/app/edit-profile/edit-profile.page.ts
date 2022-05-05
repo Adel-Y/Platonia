@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from '../apis/profile.service';
-
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
@@ -12,7 +12,7 @@ import { ProfileService } from '../apis/profile.service';
 
 export class EditProfilePage implements OnInit {
   user:any=[];
-  constructor(private service: ProfileService,private router:Router) { }
+  constructor(private service: ProfileService,private router:Router,private toaster:ToastController) { }
 
   
 
@@ -29,8 +29,34 @@ export class EditProfilePage implements OnInit {
     console.log(form.value);
     this.service.update(form.value).subscribe(response=>{
       console.log(response);
-      if(response['user']==1){
+      if(response['updated']){
+        this.toaster.create({
+          header: 'Success',
+          message: 'Profile Updated',
+          position: 'top',
+          cssClass: 'my-custom-class',
+          color:'success',
+          duration:2000
+        }).then((obj) => {
+          obj.present();
+        });
         this.router.navigate(['tabs/profile']);
+      }
+
+      else if(!response['updated']){
+        this.toaster.create({
+          header: 'Failure',
+          message: 'fields should have valid input, and email should be different',
+          position: 'top',
+          cssClass: 'my-custom-class',
+          color:'warning',
+          duration:2000
+        }).then((obj) => {
+          obj.present();
+        });
+        response=null;
+
+
       }
     });
   }

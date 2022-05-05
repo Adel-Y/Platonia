@@ -23,25 +23,25 @@
     <input type="hidden" name="id" value="{{user.id}}"> 
   <ion-item lines="none">
     <ion-label class="primarylabel">Name:</ion-label>
-    <input ngModel type="text" class="short-input" value='{{user.name}}' name="name">
+    <input ngModel type="text" class="short-input" value='{{user.name}}' name="name" required>
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Email:</ion-label>
-    <input ngModel  type="text" class="short-input" value='{{user.email}}' name="email">
+    <input ngModel  type="text" class="short-input" value='{{user.email}}' name="email" required>
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Age:</ion-label>
-    <input ngModel  type="number" class="small-input" value='{{user.age}}' name="age"> 
+    <input ngModel  type="number" class="small-input" value='{{user.age}}' name="age" required> 
 
   </ion-item>
 
   <ion-item lines="none">
     <ion-label class="primarylabel">Gender:</ion-label>
-    <input ngModel  type="text" class="short-input" value='{{user.gender}}' name="gender">
+    <input ngModel  type="text" class="short-input" value='{{user.gender}}' name="gender" required>
 
   </ion-item>
 

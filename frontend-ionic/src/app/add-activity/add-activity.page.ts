@@ -3,8 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from '../apis/profile.service';
 import { ShowEventService } from '../apis/show-event.service';
+import { ToastController } from '@ionic/angular';
 
-import { LandingPage } from '../landing/landing.page';
 
 @Component({
   selector: 'app-add-activity',
@@ -13,7 +13,7 @@ import { LandingPage } from '../landing/landing.page';
 })
 export class AddActivityPage implements OnInit {
 
-  constructor(private router:Router, private service : ShowEventService, private pservice:ProfileService ) { }
+  constructor(private router:Router, private service : ShowEventService, private pservice:ProfileService,private toaster:ToastController ) { }
   user:any=[];
 
   ngOnInit() {
@@ -31,10 +31,42 @@ export class AddActivityPage implements OnInit {
 
     this.service.createEvent(form.value).subscribe(response=>{
       console.log(response);
-      
+
+
+      if(response['state']){
+
+        this.toaster.create({
+          header: 'Success',
+          message: 'Event Created!',
+          position: 'top',
+          cssClass: 'my-custom-class',
+          color:'success',
+          duration:2000
+        }).then((obj) => {
+          obj.present();
+        });
+        this.router.navigate(['tabs']);
+      }
+      else if(!response['state']){
+        this.toaster.create({
+          header: 'Failure:',
+          message: 'Please fill al fields with valid input',
+          position: 'top',
+          cssClass: 'my-custom-class',
+          color:'warning',
+          duration:2000
+        }).then((obj) => {
+          obj.present();
+        });
+        response=null;
+
+
+      }
     });
+
+
     
-    this.router.navigate(['tabs']);
+    
   
   }
 }

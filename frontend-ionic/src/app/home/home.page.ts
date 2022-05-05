@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {LoginService} from '../apis/login.service';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import {Router} from '@angular/router';
 export class HomePage {
   login:any={};
 
-  constructor(private service:LoginService, private router:Router) {}
+  constructor(private service:LoginService, private router:Router,private toastController:ToastController) {}
 
 
 
@@ -22,6 +23,16 @@ export class HomePage {
       console.log(response);
 
       if(response['authenticated']==false){
+        this.toastController.create({
+          header: 'Error, Failed Login',
+          message: 'invalid credentials',
+          position: 'top',
+          cssClass: 'my-custom-class',
+          color:'light',
+          duration:2000
+        }).then((obj) => {
+          obj.present();
+        });
           console.log ("login failed");
         
       }
@@ -41,4 +52,5 @@ export class HomePage {
 go(){
   this.router.navigate(['register']);
 }
+
 }
