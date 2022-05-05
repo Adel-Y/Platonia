@@ -18,7 +18,6 @@ class ProfileController extends Controller
         try{
             $this->validate($request, [
                 'name' => 'required',
-                'email' => 'required|email|unique:users',
                 'age' => 'required|integer',
                 'gender'=>'required'
             ]);
@@ -30,7 +29,6 @@ class ProfileController extends Controller
 
       $user=  User::where('id', $request->id)->update([
             'name'=>$request->name,
-            'email'=>$request->email,
             'age'=>$request->age,
             'gender'=>$request->gender,
             'interests'=>$request->interests
@@ -44,7 +42,7 @@ class ProfileController extends Controller
 
         $response = collect(['updated' => true,'user'=>$user]);
         return $response;
-//        return json_decode('Profile Updated!');
+
     }
 
 

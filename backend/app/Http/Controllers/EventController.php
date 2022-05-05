@@ -13,7 +13,7 @@ class EventController extends Controller
     //
     public function showFeed(){
 
-        $event= Event::all();
+        $event= Event::orderBy('id','DESC')->get();
 
         if (!$event){
             return ['message'=> 'no events in the current time'];
@@ -70,7 +70,7 @@ class EventController extends Controller
     public function getUserEvent($user_id){
       $user_events=  UserEvent::all()->where('user_id',$user_id)->pluck('event_id');
 
-      $event= Event::whereIn('id',$user_events)->get();
+      $event= Event::whereIn('id',$user_events)->orderBy('id','DESC')->get();
 
         return $event;
 
