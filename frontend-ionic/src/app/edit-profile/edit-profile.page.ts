@@ -11,14 +11,14 @@ import { ToastController } from '@ionic/angular';
 })
 
 export class EditProfilePage implements OnInit {
-  user:any=[];
+  userr:any=[];
   constructor(private service: ProfileService,private router:Router,private toaster:ToastController) { }
 
   
 
   ngOnInit() {
     this.service.getUser(localStorage.getItem('user_id')).subscribe(response=>{
-      this.user=response;
+      this.userr=response;
       
       console.log(response);
       
@@ -46,7 +46,7 @@ export class EditProfilePage implements OnInit {
       else if(!response['updated']){
         this.toaster.create({
           header: 'Failure',
-          message: 'fields should have valid input, and email should be different',
+          message: 'fields should have valid input',
           position: 'top',
           cssClass: 'my-custom-class',
           color:'warning',

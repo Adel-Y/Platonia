@@ -11,7 +11,13 @@ export class MyActivityPage implements OnInit {
   constructor(private service: ShowEventService) { }
 events:any=[];
 
-  ngOnInit() {
+ngOnInit() {
+    
+
+
+}
+
+ionViewDidEnter() {
     this.service.getUserEvent(localStorage.getItem('user_id')).subscribe(response => {
       this.events=response;
       console.log('retrieved');

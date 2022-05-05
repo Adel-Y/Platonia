@@ -94,7 +94,7 @@ ion-item{
     font-size: 12px;
     resize: none;
     background-color: #e6e6e6;
-    --padding-start:10px;
+    padding-inline-start:10px;
     
 }
 
@@ -109,7 +109,7 @@ ion-button{
 }
 
 .short-input{
-    width: 180px;
+    width: 170px;
     height:25px;
     padding-inline-start: 8px;
     margin-right: 4px;
@@ -127,7 +127,7 @@ ion-button{
   border-radius: 10px;
   font-size: 14px;
 
-  margin-right: 124px;
+  margin-right: 114px;
   padding-inline-start: 8px;
   // margin-left: 5px;
   background-color: #e6e6e6;
